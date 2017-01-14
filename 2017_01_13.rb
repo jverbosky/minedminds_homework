@@ -13,3 +13,7 @@ for num in 1..100
     puts num
   end
 end
+
+# Single line version using semi-colons to continue
+# Demo-only - not the most readable
+for num in 1..100; if num % 3 == 0 && num % 5 == 0; puts "Mined Minds"; elsif num % 3 == 0; puts "Mined"; elsif num % 5 == 0; puts "Minds"; else puts num; end; end
