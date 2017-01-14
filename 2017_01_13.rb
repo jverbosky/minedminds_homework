@@ -6,9 +6,9 @@ for num in 1..100
   if num % 3 == 0 && num % 5 == 0
     puts "Mined Minds"
   elsif num % 3 == 0
-  	puts "Mined"
+    puts "Mined"
   elsif num % 5 == 0
-  	puts "Minds"
+    puts "Minds"
   else
     puts num
   end
