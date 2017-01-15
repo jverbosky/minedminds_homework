@@ -6,6 +6,7 @@
 # If number is divisible by 5, replace number with "Minds"
 # If number is divisible by 3 & 5 (15), replace number with "Mined Minds"
 
+# Method 1
 # "Standard" version using if/elsif/else construct
 def if_else()
   for num in 1..100
@@ -21,12 +22,14 @@ def if_else()
   end
 end
 
+# Method 2
 # Single line version of if_else() using semi-colons to continue
 # Demo-only - not the most readable
 def one_liner()
   for num in 1..100; if num % 3 == 0 && num % 5 == 0; puts "Mined Minds"; elsif num % 3 == 0; puts "Mined"; elsif num % 5 == 0; puts "Minds"; else puts num; end; end
 end
 
+# Method 3
 # A variation using one line for conditional statement via chained logical operators
 # Has more of a SQL feel to it (where ___ or ___ or ___)
 def log_ops()
@@ -36,6 +39,7 @@ def log_ops()
   end
 end
 
+# Method 4
 # A variation using lambda literals with a case statement
 def lambda_case()
   div_3 = ->(x) { x % 3 == 0 }
@@ -51,12 +55,39 @@ def lambda_case()
   end
 end
 
+# Method 4
+# A variation that uses a custom method to determine divisibility instead of modulo operator
+def evenly_divisible(dividend, divisor)
+  quotient = dividend.to_f / divisor
+  remainder = quotient - quotient.to_int
+  if remainder > 0
+    return false
+  else
+    return true
+  end
+end
+
+def custom_modulo()
+  for num in 1..100
+    if evenly_divisible(num, 3) && evenly_divisible(num, 5)
+      puts "Mined Minds"
+    elsif evenly_divisible(num, 3)
+      puts "Mined"
+    elsif evenly_divisible(num, 5)
+      puts "Minds"
+    else
+      puts num
+    end
+  end
+end
+
 # Method to prompt user for method to use
 def user_input()
   puts "\nMethod 1 - If/Else"
   puts "Method 2 - Single Line If/Else"
   puts "Method 3 - Chained Logical Operators"
   puts "Method 4 - Lambdas + Case Statement"
+  puts "Method 5 - Custom Modulo"
   print "\nSelect a method number and press Enter:"
   input = gets.chomp
   method_selection(input)
@@ -66,7 +97,7 @@ end
 def method_selection(selection)
   # Array intersection used to detect
   # if multiple method numbers entered
-  valid_methods = ["1", "2", "3", "4"]
+  valid_methods = ["1", "2", "3", "4", "5"]
   compare = selection.split("")
   intersection = valid_methods & compare
   if intersection.size > 1
@@ -88,6 +119,10 @@ def method_selection(selection)
     puts "\nYour input contained '4' - running Method 4 - Lambdas + Case Statement..."
     puts "\n"
     lambda_case()
+  elsif selection.include? "5"
+    puts "\nYour input contained '5' - running Method 5 - Custom Modulo..."
+    puts "\n"
+    custom_modulo()
   else
     puts "\nNo valid method number specified - please try again."
     user_input()
