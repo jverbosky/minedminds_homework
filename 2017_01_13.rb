@@ -56,7 +56,8 @@ def lambda_case()
 end
 
 # Method 5
-# A variation that uses a custom method to determine divisibility instead of modulo operator
+# A variation that uses a custom method to determine divisibility
+# instead of the modulo operator
 def evenly_divisible(dividend, divisor)
   quotient = dividend.to_f / divisor
   remainder = quotient - quotient.to_int
@@ -92,6 +93,34 @@ def list_comprehension()
   puts values
 end
 
+# Method 7
+# Another variation that uses a custom modulo method which converts each number
+# to a different base (base3, base5) and then evaluates the rightmost digit (slice)
+# to assess for divisibility
+def base_slice(number, base)
+  converted = number.to_s(base)
+  ones_place = converted[-1]
+  if ones_place.to_i == 0
+    return true
+  else
+    return false
+  end
+end
+
+def base_conversion()
+  for num in 1..100
+    if base_slice(num, 3) && base_slice(num, 5)
+      puts "Mined Minds"
+    elsif base_slice(num, 3)
+      puts "Mined"
+    elsif base_slice(num, 5)
+      puts "Minds"
+    else
+      puts num
+    end
+  end
+end
+
 # Method to prompt user for method to use
 def user_input()
   puts "\nMethod 1 - If/Else"
@@ -100,6 +129,7 @@ def user_input()
   puts "Method 4 - Lambdas + Case Statement"
   puts "Method 5 - Custom Modulo"
   puts "Method 6 - List Comprehension"
+  puts "Method 7 - Base Conversion"
   print "\nSelect a method number and press Enter:"
   input = gets.chomp
   method_selection(input)
@@ -109,7 +139,7 @@ end
 def method_selection(selection)
   # Array intersection used to detect
   # if multiple method numbers entered
-  valid_methods = ["1", "2", "3", "4", "5", "6"]
+  valid_methods = ["1", "2", "3", "4", "5", "6", "7"]
   compare = selection.split("")
   intersection = valid_methods & compare
   if intersection.size > 1
@@ -120,7 +150,7 @@ def method_selection(selection)
     puts "\n"
     if_else()
   elsif selection.include? "2"
-    puts "\nYour input contained '2' - rethod 2 - Single Line If/Else..."
+    puts "\nYour input contained '2' - running Method 2 - Single Line If/Else..."
     puts "\n"
     one_liner()
   elsif selection.include? "3"
@@ -139,6 +169,10 @@ def method_selection(selection)
     puts "\nYour input contained '6' - running Method 6 - List Comprehension..."
     puts "\n"
     list_comprehension()
+  elsif selection.include? "7"
+    puts "\nYour input contained '7' - running Method 7 - Base Conversion..."
+    puts "\n"
+    base_conversion()
   else
     puts "\nNo valid method number specified - please try again."
     user_input()
