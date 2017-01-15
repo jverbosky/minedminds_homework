@@ -63,25 +63,29 @@ def user_input()
 end
 
 # Method to run selected method or reprompt for valid selection
-# Not perfect - if input contains two valid numbers
-# will execute lowest valid number specified
-# Ex: If "23" is entered, method 2 will run
-# Need to think more about this edge case...
 def method_selection(selection)
-  if selection.include? "1"
-    puts "\nRunning Method 1 - If/Else..."
+  # Array intersection used to detect
+  # if multiple method numbers entered
+  valid_methods = ["1", "2", "3", "4"]
+  compare = selection.split("")
+  intersection = valid_methods & compare
+  if intersection.size > 1
+    puts "\nMultiple valid method numbers specified - please try again."
+    user_input()
+  elsif selection.include? "1"
+    puts "\nYour input contained '1' - running Method 1 - If/Else..."
     puts "\n"
     if_else()
   elsif selection.include? "2"
-    puts "\nRunning Method 2 - Single Line If/Else..."
+    puts "\nYour input contained '2' - rethod 2 - Single Line If/Else..."
     puts "\n"
     one_liner()
   elsif selection.include? "3"
-    puts "\nRunning Method 3 - Chained Logical Operators..."
+    puts "\nYour input contained '3' - running Method 3 - Chained Logical Operators..."
     puts "\n"
     log_ops()
   elsif selection.include? "4"
-    puts "\nRunning Method 4 - Lambdas + Case Statement..."
+    puts "\nYour input contained '4' - running Method 4 - Lambdas + Case Statement..."
     puts "\n"
     lambda_case()
   else
