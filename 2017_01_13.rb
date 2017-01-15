@@ -81,6 +81,17 @@ def custom_modulo()
   end
 end
 
+# Method 6
+# A variation that uses list comprehension and map method to populate an array
+def list_comprehension()
+  values = []
+  (1..100).each { |num| values.push(num) }
+  values.map! { |value| (value % 3 != 0 || value % 5 != 0) ? value : "Mined Minds" }
+  values.map! { |value| value % 3 != 0 ? value : "Mined" }
+  values.map! { |value| value % 5 != 0 ? value : "Minds" }
+  puts values
+end
+
 # Method to prompt user for method to use
 def user_input()
   puts "\nMethod 1 - If/Else"
@@ -88,6 +99,7 @@ def user_input()
   puts "Method 3 - Chained Logical Operators"
   puts "Method 4 - Lambdas + Case Statement"
   puts "Method 5 - Custom Modulo"
+  puts "Method 6 - List Comprehension"
   print "\nSelect a method number and press Enter:"
   input = gets.chomp
   method_selection(input)
@@ -97,7 +109,7 @@ end
 def method_selection(selection)
   # Array intersection used to detect
   # if multiple method numbers entered
-  valid_methods = ["1", "2", "3", "4", "5"]
+  valid_methods = ["1", "2", "3", "4", "5", "6"]
   compare = selection.split("")
   intersection = valid_methods & compare
   if intersection.size > 1
@@ -123,6 +135,10 @@ def method_selection(selection)
     puts "\nYour input contained '5' - running Method 5 - Custom Modulo..."
     puts "\n"
     custom_modulo()
+  elsif selection.include? "6"
+    puts "\nYour input contained '6' - running Method 6 - List Comprehension..."
+    puts "\n"
+    list_comprehension()
   else
     puts "\nNo valid method number specified - please try again."
     user_input()
