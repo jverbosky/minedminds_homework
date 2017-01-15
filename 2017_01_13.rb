@@ -55,7 +55,7 @@ def lambda_case()
   end
 end
 
-# Method 4
+# Method 5
 # A variation that uses a custom method to determine divisibility instead of modulo operator
 def evenly_divisible(dividend, divisor)
   quotient = dividend.to_f / divisor
