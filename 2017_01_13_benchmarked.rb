@@ -15,7 +15,7 @@
 require 'benchmark'
 
 # Custom modulo method 1
-# Used by "custom module" method
+# Used by "custom modulo" method
 def evenly_divisible(dividend, divisor)
   quotient = dividend.to_f / divisor
   remainder = quotient - quotient.to_int
