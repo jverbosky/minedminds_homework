@@ -132,50 +132,51 @@ def user_input()
   puts "Method 7 - Base Conversion"
   print "\nSelect a method number and press Enter:"
   input = gets.chomp
-  method_selection(input)
+  test_input(input)
 end
 
-# Method to run selected method or reprompt for valid selection
-def method_selection(selection)
-  # Array intersection used to detect
-  # if multiple method numbers entered
+# Method to evaluate user input for multiple or invalid method numbers
+def test_input(selection)
   valid_methods = ["1", "2", "3", "4", "5", "6", "7"]
   compare = selection.split("")
   intersection = valid_methods & compare
   if intersection.size > 1
-    puts "\nMultiple valid method numbers specified - please try again."
+    puts "\nYour input contained multiple valid method numbers - please try again."
     user_input()
-  elsif selection.include? "1"
-    puts "\nYour input contained '1' - running Method 1 - If/Else..."
-    puts "\n"
-    if_else()
-  elsif selection.include? "2"
-    puts "\nYour input contained '2' - running Method 2 - Single Line If/Else..."
-    puts "\n"
-    one_liner()
-  elsif selection.include? "3"
-    puts "\nYour input contained '3' - running Method 3 - Chained Logical Operators..."
-    puts "\n"
-    log_ops()
-  elsif selection.include? "4"
-    puts "\nYour input contained '4' - running Method 4 - Lambdas + Case Statement..."
-    puts "\n"
-    lambda_case()
-  elsif selection.include? "5"
-    puts "\nYour input contained '5' - running Method 5 - Custom Modulo..."
-    puts "\n"
-    custom_modulo()
-  elsif selection.include? "6"
-    puts "\nYour input contained '6' - running Method 6 - List Comprehension..."
-    puts "\n"
-    list_comprehension()
-  elsif selection.include? "7"
-    puts "\nYour input contained '7' - running Method 7 - Base Conversion..."
-    puts "\n"
-    base_conversion()
+  elsif intersection.empty? == false
+    user_selection(intersection.join)
   else
     puts "\nNo valid method number specified - please try again."
     user_input()
+  end
+end
+
+# Method to confirm user input and advise on method being run
+def user_selection(method)
+  methods_text = { 
+    "1" => "1 - If/Else...",
+    "2" => "2 - Single Line If/Else...",
+    "3" => "3 - Chained Logical Operators...",
+    "4" => "4 - Lambdas + Case Statement...",
+    "5" => "5 - Custom Modulo...",
+    "6" => "6 - List Comprehension...",
+    "7" => "7 - Base Conversion..."
+  }
+  puts "\nYour input contained '#{method}' - running Method #{methods_text[method]}"
+  puts "\n"
+  run_method(method)
+end
+
+# Method to run the selected method
+def run_method(item)
+  case item
+    when "1" then if_else()
+    when "2" then one_liner()
+    when "3" then log_ops()
+    when "4" then lambda_case()
+    when "5" then custom_modulo()
+    when "6" then list_comprehension()
+    when "7" then base_conversion()    
   end
 end
 
