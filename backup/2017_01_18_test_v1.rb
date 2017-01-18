@@ -19,24 +19,27 @@ class TestMinedMindsKata < Minitest::Test
 		assert_equal(100,results.count)
 	end
 
-    # Basic test for method that returns 1
-	def test_function_returns_1
-		results = minedminds()
-		assert_equal(1,results[0])
-	end
+	# # Note: method name has to begin with "test"
+	# def test_1_returns_1
+	# 	results = minedminds()
+	# 	assert_equal(1,results[0])
+	# end
 
-	# Test for same method
-	# Have method use parameter to define variable value
-	def test_function_returns_2
-		results = minedminds()
-		assert_equal(2,results[1])
-	end
+ #    # Basic test for method that returns 1
+	# def test_function_returns_1
+	# 	assert_equal(1,minedmindskata(1))
+	# end
 
-	# Test paired with method 3
-	def test_function_returns_mined_for_3
-		results = minedminds()
-		assert_equal("Mined",results[2])
-	end
+	# # Test for same method
+	# # Have method use parameter to define variable value
+	# def test_function_returns_2
+	# 	assert_equal(2,minedmindskata(2))
+	# end
+
+	# # Test paired with method 3
+	# def test_function_returns_mined_for_3
+	# 	assert_equal("Mined",minedmindskata(3))
+	# end
 
 	# def test_function_returns_mined_for_5
 	# 	assert_equal("Minds",minedmindskata(5))
