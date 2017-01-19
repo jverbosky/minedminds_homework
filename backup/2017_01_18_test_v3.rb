@@ -37,7 +37,7 @@ class TestMinedMindsKata < Minitest::Test
 		assert_equal("Mined",results[2])
 	end
 
-	# Test to verify that fifth array element equals "Minds"
+	# Test to verify that fourth array element equals "Minds"
 	def test_function_returns_mind_for_5
 		results = minedminds()
 		assert_equal("Minds",results[4])
@@ -49,29 +49,23 @@ class TestMinedMindsKata < Minitest::Test
 		assert_equal("Mined Minds",results[14])
 	end
 
-	# Test to verify that sixty-ninth array element equals "Mined"
-	def test_function_returns_mined_for_69
-		results = minedminds()
-		assert_equal("Mined",results[68])
-	end
+	# def test_function_returns_69
+	# 	assert_equal("Mined",minedmindskata(69))
+	# end
 
-	# Test to verify that eighty-fifth array element equals "Minds"
-	def test_function_returns_mind_for_85
-		results = minedminds()
-		assert_equal("Minds",results[84])
-	end
+	# def test_function_returns_85
+	# 	assert_equal("Minds",minedmindskata(85))
+	# end
 
-	# Test to verify that seventy-fifth array element equals "Mined Minds"
-	def test_function_returns_mind_for_75
-		results = minedminds()
-		assert_equal("Mined Minds",results[74])
-	end
+	# def test_function_returns_75
+	# 	assert_equal("Mined Minds",minedmindskata(75))
+	# end
 
 end
 
-# Can use an entire array to test all values
-# But more typical to do spot tests
-#
-#  def test_function_returns_array
+
+  # Can use arrays to test ranges
+
+ #  def test_function_returns_array
 	# assert_equal([1, 2, "Mined", 4, "Minds", "Mined", 7, 8, "Mined", "Minds", 11, "Mined", 13, 14, "Mined Minds", 16, 17, "Mined", 19, "Minds", "Mined", 22, 23, "Mined", "Minds", 26, "Mined", 28, 29, "Mined Minds", 31, 32, "Mined", 34, "Minds", "Mined", 37, 38, "Mined", "Minds", 41, "Mined", 43, 44, "Mined Minds", 46, 47, "Mined", 49, "Minds", "Mined", 52, 53, "Mined", "Minds", 56, "Mined", 58, 59, "Mined Minds", 61, 62, "Mined", 64, "Minds", "Mined", 67, 68, "Mined", "Minds", 71, "Mined", 73, 74, "Mined Minds", 76, 77, "Mined", 79, "Minds", "Mined", 82, 83, "Mined", "Minds", 86, "Mined", 88, 89, "Mined Minds", 91, 92, "Mined", 94, "Minds", "Mined", 97, 98, "Mined", "Minds"],minedmindskata())
-#  end
+ #  end
