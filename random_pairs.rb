@@ -31,4 +31,10 @@ names = [
 	"Teela Subba"
 ]
 
-puts names
+def random_pairs(list)
+	if list.class == Array
+		return true
+	end
+end
+
+puts random_pairs(names)
