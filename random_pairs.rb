@@ -6,53 +6,53 @@
 # - if there is an odd number of names, adds the last name into one of the other sub-arrays
 # - per assignment name, pairings should be randomly generated each time function runs
 
-# Array containing 21 names
+# Array containing 21 names of Pittsburgh TechHire web dev training team
 names = [
-	"Allen Weber",
-	"Brian Lewis",
-	"Cummie Washington",
-	"Dover Hellfeldt",
-	"Edwin Wells",
-	"Frank Mugo",
-	"Frank Coleman",
-	"George Bruner",
-	"Jayvon Harris",
-	"John Verbosky",
-	"Khalifa Cochran",
-	"Lee Brown",
-	"Lisa Petrovich",
-	"Matt Teitz",
-	"Max Pokropowicz",
-	"Mike Ciletti",
-	"Pat Wehman",
-	"Patrick Roberts",
-	"Sherri Dyson",
-	"Takhir Salimov",
-	"Teela Subba"
+  "Allen Weber",
+  "Brian Lewis",
+  "Cummie Washington",
+  "Dover Hellfeldt",
+  "Edwin Wells",
+  "Frank Mugo",
+  "Frank Coleman",
+  "George Bruner",
+  "Jayvon Harris",
+  "John Verbosky",
+  "Khalifa Cochran",
+  "Lee Brown",
+  "Lisa Petrovich",
+  "Matt Teitz",
+  "Max Pokropowicz",
+  "Mike Ciletti",
+  "Pat Wehman",
+  "Patrick Roberts",
+  "Sherri Dyson",
+  "Takhir Salimov",
+  "Teela Subba"
 ]
 
 # Function to verify that object being passed in is an array
 def array_test(a)
-	if a.class == Array
-		random_sort(a)
-	end
+  if a.class == Array
+    random_sort(a)
+  end
 end
 
 # Function to verify that all array members are strings
 def string_test(b)
-	test = []
-	b.each do |item|
-		if item.class == String
-			test.push true
-		else
-			test.push false
-		end
-	end
-	if test.include? false
-		return false
-	else
-		random_sort(b)
-	end
+  test = []
+  b.each do |item|
+    if item.class == String
+      test.push true
+    else
+      test.push false
+    end
+  end
+  if test.include? false
+    return false
+  else
+    random_sort(b)
+  end
 end
 
 # Function to randomly scramble items in the array and verify that array members haven't changed
@@ -64,14 +64,14 @@ def random_sort(c)
 end
 
 def random_pairs(d)
-	inner_arrays = d.count / 2  # value for number of inner arrays to hold pairs
-	multi = Array.new(inner_arrays) { Array.new(2) }  # create multi-dimensional arrays for each pair
-	if d.count % 2 == 1
-		return true
-	else
-		return false
-	end
-	print multi
+  inner_arrays = d.count / 2  # value for number of inner arrays to hold pairs
+  multi = Array.new(inner_arrays) { Array.new(2) }  # create multi-dimensional arrays for each pair
+  if d.count % 2 == 1
+    return true
+  else
+    return false
+  end
+  print multi
 end
 
 puts array_test(names)
