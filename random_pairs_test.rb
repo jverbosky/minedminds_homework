@@ -25,7 +25,7 @@ class TestMinedMindsHomework < Minitest::Test
 		assert_equal(true,string_test(eleven))
 	end
 
-	# Test 3 - Verify that random_sort() has scrambled the input array
+	# Test 3 - Verify that random_sort() has scrambled the input array and array members haven't changed
 	def test_2_random_sort
 		eleven = ["a","b","c","d","e","f","g","h","i","j","k"]
 		assert_equal(true,random_sort(eleven))

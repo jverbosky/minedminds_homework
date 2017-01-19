@@ -58,7 +58,7 @@ end
 # Function to randomly scramble items in the array
 def random_sort(c)
   scrambled = c.shuffle
-  if c != scrambled
+  if c - scrambled == [] && scrambled - c == []
   	random_pairs(scrambled)
   end
 end
