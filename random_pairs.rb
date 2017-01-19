@@ -55,7 +55,7 @@ def string_test(b)
 	end
 end
 
-# Function to randomly scramble items in the array
+# Function to randomly scramble items in the array and verify that array members haven't changed
 def random_sort(c)
   scrambled = c.shuffle
   if c - scrambled == [] && scrambled - c == []
