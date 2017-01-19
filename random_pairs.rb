@@ -17,7 +17,7 @@ names = [
   "Frank Coleman",
   "George Bruner",
   "Jayvon Harris",
-#  "John Verbosky", # comment out to test list_pairs_even()
+  "John Verbosky", # comment out to test list_pairs_even()
   "Khalifa Cochran",
   "Lee Brown",
   "Lisa Petrovich",
@@ -35,7 +35,7 @@ names = [
 # Corresponds to test_1_array_parameter
 def array_test(a)
   if a.class == Array
-    #puts "Run string_test(a)..."  # basic test
+    #puts "Run string_test(a)..."  # inline test
     string_test(a)
   end
 end
@@ -54,7 +54,7 @@ def string_test(b)
   if test.include? false
     return false
   else
-    #puts "Run random_sort(b)..."  # basic test
+    #puts "Run random_sort(b)..."  # inline test
     random_sort(b)
   end
 end
@@ -64,17 +64,17 @@ end
 def random_sort(c)
   scrambled = c.shuffle
   if c - scrambled == [] && scrambled - c == []
-  	#puts "Run pair_names(scrambled)..."  # basic test
+  	#puts "Run pair_names(scrambled)..."  # inline test
   	pair_names(scrambled)
   end
 end
 
 # Function to change array into a multi-dimensional array with an inner array for every two names
 # Ex: [[name1,name2],[name3,name4],[name5,name6]]
-# Corresponds to test_4_
+# Corresponds to test_4_ - this is where testing started breaking...
 def pair_names(d)
   paired = d.each_slice(2).to_a
-  #puts "Run evaluate_pairs(paired)..."  # basic test
+  #puts "Run evaluate_pairs(paired)..."  # inline test
   evaluate_pairs(paired)
 end
 
@@ -85,10 +85,10 @@ end
 def evaluate_pairs(e)
   last = e.count - 1
   if e[last].count == 1
-  	#puts "Run merge_pairs_odd(e)..."  # basic test
+  	#puts "Run merge_pairs_odd(e)..."  # inline test
     merge_pairs_odd(e)
   else
-  	#puts "Run list_pairs_even(e)..."  # basic test
+  	#puts "Run list_pairs_even(e)..."  # inline test
     list_pairs_even(e)
   end
 end
@@ -107,17 +107,26 @@ end
 # Final inner array will then have 3 members
 # Corresponds to test_8_
 def merge_pairs_odd(multi)
-  puts "merge last two inner arrays..."
+  last = multi.count - 1
+  next_to_last = multi.count - 2
+  together = multi[next_to_last] | multi[last]
+  multi[next_to_last] = together
+  multi.delete_at(last)
+  #puts "Run list_pairs_odd(multi)..."  # inline test
   list_pairs_odd(multi)
 end
 
 # Function to list array pairs when final inner array has an three names
 # Corresponds to test_9_
-def list_pairs_odd(pairs)
-	puts "output random pairs and final set of three names..."
+def list_pairs_odd(merged)
+  pairs = merged[0..-2]
+  final = merged.count - 1
+  counter = 1
+  pairs.each do |name1, name2| 
+    puts "Random Pair #{counter}: #{name1}, #{name2}"
+    counter += 1
+  end
+  puts "Random Pair #{counter}: #{merged[final][0]}, #{merged[final][1]}, #{merged[final][2]}"
 end
 
-#array_test(names)
-# puts string_test(names)
-# puts random_sort(names)
-# puts random_pairs(names)
+array_test(names)
