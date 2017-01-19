@@ -32,24 +32,41 @@ names = [
 ]
 
 # Function to verify that object being passed in is an array
-def array_test(object)
-	if object.class == Array
-		random_sort(object)
+def array_test(a)
+	if a.class == Array
+		random_sort(a)
+	end
+end
+
+# Function to verify that all array members are strings
+def string_test(b)
+	test = []
+	b.each do |item|
+		if item.class == String
+			test.push true
+		else
+			test.push false
+		end
+	end
+	if test.include? false
+		return false
+	else
+		random_sort(b)
 	end
 end
 
 # Function to randomly scramble items in the array
-def random_sort(list)
-  scrambled = list.shuffle
-  if list != scrambled
+def random_sort(c)
+  scrambled = c.shuffle
+  if c != scrambled
   	random_pairs(scrambled)
   end
 end
 
-def random_pairs(items)
-	inner_arrays = items.count / 2  # value for number of inner arrays to hold pairs
+def random_pairs(d)
+	inner_arrays = d.count / 2  # value for number of inner arrays to hold pairs
 	multi = Array.new(inner_arrays) { Array.new(2) }  # create multi-dimensional arrays for each pair
-	if items.count % 2 == 1
+	if d.count % 2 == 1
 		return true
 	else
 		return false
@@ -58,5 +75,6 @@ def random_pairs(items)
 end
 
 puts array_test(names)
+puts string_test(names)
 puts random_sort(names)
 puts random_pairs(names)
