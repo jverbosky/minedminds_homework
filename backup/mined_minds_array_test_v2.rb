@@ -8,7 +8,7 @@
 require "minitest/autorun"
 
 # Link test file and production file together
-require_relative "2017_01_18.rb"
+require_relative "mined_minds_array.rb"
 
 # Class to create a new instance for test (?)
 class TestMinedMindsKata < Minitest::Test

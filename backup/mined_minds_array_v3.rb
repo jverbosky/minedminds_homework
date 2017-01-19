@@ -1,5 +1,5 @@
 # Function to demonstrate Test Driven Design
-# Paired with 2017_01_18_test.rb
+# Paired with mined_minds_array_test.rb
 #
 # Populate an array with numbers 1 - 100, substitute with strings if divisible by 3, 5 or 15
 #
