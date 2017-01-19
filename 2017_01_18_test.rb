@@ -1,8 +1,8 @@
-# Test for code
+# Test for code in 2017_01_18.rb
 #
 # Unit Test example
 # Write code to test and make sure your code does what you say it does
-
+#
 # Include minitest gem
 # http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest.html
 require "minitest/autorun"
@@ -10,41 +10,44 @@ require "minitest/autorun"
 # Link test file and production file together
 require_relative "2017_01_18.rb"
 
-# Class to create a new instance for test (?)
+# Class to create a new instance for test
 class TestMinedMindsKata < Minitest::Test
 
-	# Test to see if array has 100 elements
+	# Test to verify that array has 100 elements
 	def test_1_array_length
 		results = minedminds()
 		assert_equal(100,results.count)
 	end
 
-    # Basic test for method that returns 1
+    # Test to verify that first array element equals 1
 	def test_function_returns_1
 		results = minedminds()
 		assert_equal(1,results[0])
 	end
 
-	# Test for same method
-	# Have method use parameter to define variable value
+	# Test to verify that second array element equals 2
 	def test_function_returns_2
 		results = minedminds()
 		assert_equal(2,results[1])
 	end
 
-	# Test paired with method 3
+	# Test to verify that third array element equals "Mined"
 	def test_function_returns_mined_for_3
 		results = minedminds()
 		assert_equal("Mined",results[2])
 	end
 
-	# def test_function_returns_mined_for_5
-	# 	assert_equal("Minds",minedmindskata(5))
-	# end
+	# Test to verify that fourth array element equals "Minds"
+	def test_function_returns_mind_for_5
+		results = minedminds()
+		assert_equal("Minds",results[4])
+	end
 
-	# def test_function_returns_mined_minds_for_15
-	# 	assert_equal("Mined Minds",minedmindskata(15))
-	# end
+	# Test to verify that fifteenth array element equals "Mined Minds"
+	def test_function_returns_mind_for_15
+		results = minedminds()
+		assert_equal("Mined Minds",results[14])
+	end
 
 	# def test_function_returns_69
 	# 	assert_equal("Mined",minedmindskata(69))

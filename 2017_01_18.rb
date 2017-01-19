@@ -1,7 +1,13 @@
-# Need to call ("values") or return ("return values")
-# Using "print values" or "puts values" will error on test
-
-# def minedmindskata()
+# Function to demonstrate Test Driven Design
+# Paired with 2017_01_18_test.rb
+#
+# Populate an array with numbers 1 - 100, substitute with strings if divisible by 3, 5 or 15
+#
+# Note: Need to call ("values") or return ("return values")
+# Using "print values" or "puts values" in function will error on test
+#
+# Original function written to populate array, not using Test Driven Design
+# def minedminds()
 #   values = []
 #   (1..100).each { |num| values.push(num) }
 #   values.map! { |value| (value % 3 != 0 || value % 5 != 0) ? value : "Mined Minds" }
@@ -10,14 +16,16 @@
 #   values
 # end
 
-# puts minedmindskata()
-
 def minedminds()
 	range = []
 	num = 1
 	for item in (1..100)
-		if item % 3 == 0
+		if item % 3 == 0 && item % 5 == 0
+			range.push("Mined Minds")
+		elsif item % 3 == 0
 			range.push("Mined")
+		elsif item % 5 == 0
+			range.push("Minds")
 		else
 			range.push(num)
 		end	
