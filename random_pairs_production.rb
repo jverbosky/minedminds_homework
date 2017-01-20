@@ -17,7 +17,7 @@ names = [
   "Frank Coleman",
   "George Bruner",
   "Jayvon Harris",
-#  "John Verbosky",  # comment out to test for even number of array items
+  "John Verbosky",  # comment out to test for even number of array items
   "Khalifa Cochran",
   "Lee Brown",
   "Lisa Petrovich",
@@ -36,8 +36,8 @@ names = [
 def array_test(a)
   if a.class == Array
     #puts "Run string_test(a)..."  # inline test
-    return true   # for testing, comment out for production
-    #string_test(a)  # for production, comment out for testing
+    #return true   # for testing, comment out for production
+    string_test(a)  # for production, comment out for testing
   end
 end
 
@@ -56,8 +56,8 @@ def string_test(b)
     return false
   else
     #puts "Run random_sort(b)..."  # inline test
-    return true   # for testing, comment out for production
-    #random_sort(b)  # for production, comment out for testing
+    #return true   # for testing, comment out for production
+    random_sort(b)  # for production, comment out for testing
   end
 end
 
@@ -66,9 +66,9 @@ end
 def random_sort(c)
   scrambled = c.shuffle
   if c - scrambled == [] && scrambled - c == []
-  	#puts "Run pair_names(scrambled)..."  # inline test
-  	return true   # for testing, comment out for production
-  	#pair_names(scrambled)  # for production, comment out for testing
+    #puts "Run pair_names(scrambled)..."  # inline test
+    #return true   # for testing, comment out for production
+    pair_names(scrambled)  # for production, comment out for testing
   end
 end
 
@@ -78,8 +78,8 @@ end
 def pair_names(d)
   paired = d.each_slice(2).to_a
   #puts "Run evaluate_pairs(paired)..."  # inline test
-  return paired  # for testing, comment out for production
-  #evaluate_pairs(paired)  # for production, comment out for testing
+  #return paired  # for testing, comment out for production
+  evaluate_pairs(paired)  # for production, comment out for testing
 end
 
 # Function to determine if the final inner array is paired or solitary
@@ -89,13 +89,13 @@ end
 def evaluate_pairs(e)
   last = e.count - 1
   if e[last].count == 1
-  	#puts "Run merge_pairs_odd(e)..."  # inline test
-  	return true  # for testing, comment out for production
-    #merge_pairs_odd(e)  # for production, comment out for testing
+    #puts "Run merge_pairs_odd(e)..."  # inline test
+    #return true  # for testing, comment out for production
+    merge_pairs_odd(e)  # for production, comment out for testing
   else
-  	#puts "Run list_pairs_even(e)..."  # inline test
-  	return false  # for testing, comment out for production
-    #list_pairs_even(e)  # for production, comment out for testing
+    #puts "Run list_pairs_even(e)..."  # inline test
+    #return false  # for testing, comment out for production
+    list_pairs_even(e)  # for production, comment out for testing
   end
 end
 
@@ -119,8 +119,8 @@ def merge_pairs_odd(multi)
   multi[next_to_last] = together
   multi.delete_at(last)
   #puts "Run list_pairs_odd(multi)..."  # inline test
-  return multi # for testing, comment out for production
-  #list_pairs_odd(multi)  # for production, comment out for testing
+  #return multi # for testing, comment out for production
+  list_pairs_odd(multi)  # for production, comment out for testing
 end
 
 # Function to list array pairs when final inner array has an three names
@@ -137,3 +137,29 @@ def list_pairs_odd(merged)
 end
 
 array_test(names)
+
+# Example output for even number of items in names[]
+
+# Random Pair 1: Lisa Petrovich, Patrick Roberts
+# Random Pair 2: Max Pokropowicz, Frank Mugo
+# Random Pair 3: Dover Hellfeldt, Takhir Salimov
+# Random Pair 4: Frank Coleman, Edwin Wells
+# Random Pair 5: Jayvon Harris, Pat Wehman
+# Random Pair 6: Cummie Washington, Teela Subba
+# Random Pair 7: Khalifa Cochran, Matt Teitz
+# Random Pair 8: Brian Lewis, Lee Brown
+# Random Pair 9: Sherri Dyson, George Bruner
+# Random Pair 10: Mike Ciletti, Allen Weber
+
+# Example output for odd number of items in names[]
+
+# Random Pair 1: John Verbosky, Frank Mugo
+# Random Pair 2: Pat Wehman, Edwin Wells
+# Random Pair 3: Frank Coleman, George Bruner
+# Random Pair 4: Brian Lewis, Teela Subba
+# Random Pair 5: Cummie Washington, Mike Ciletti
+# Random Pair 6: Sherri Dyson, Max Pokropowicz
+# Random Pair 7: Allen Weber, Jayvon Harris
+# Random Pair 8: Khalifa Cochran, Matt Teitz
+# Random Pair 9: Lee Brown, Dover Hellfeldt
+# Random Pair 10: Patrick Roberts, Takhir Salimov, Lisa Petrovich
