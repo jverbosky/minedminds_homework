@@ -17,7 +17,7 @@ names = [
   "Frank Coleman",
   "George Bruner",
   "Jayvon Harris",
-#  "John Verbosky",  # comment out to test for even number of array items
+  "John Verbosky",  # comment out to test for even number of array items
   "Khalifa Cochran",
   "Lee Brown",
   "Lisa Petrovich",
@@ -115,8 +115,12 @@ end
 def merge_pairs_odd(multi)
   last = multi.count - 1
   next_to_last = multi.count - 2
+  # Perform a union on the last two arrays
+  # Google: set operators with Ruby arrays
   together = multi[next_to_last] | multi[last]
+  # Assign the next-to-the-last inner array the union value (3 items)
   multi[next_to_last] = together
+  # Delete the last array
   multi.delete_at(last)
   #puts "Run list_pairs_odd(multi)..."  # inline test
   return multi # for testing, comment out for production
