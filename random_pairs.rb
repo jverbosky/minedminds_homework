@@ -120,7 +120,7 @@ def merge_pairs_odd(multi)
   together = multi[next_to_last] | multi[last]
   # Assign the next-to-the-last inner array the union value (3 items)
   multi[next_to_last] = together
-  # Delete the last array
+  # Delete the last inner array
   multi.delete_at(last)
   #puts "Run list_pairs_odd(multi)..."  # inline test
   return multi # for testing, comment out for production
