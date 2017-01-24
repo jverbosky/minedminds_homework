@@ -115,7 +115,7 @@ end
 def merge_pairs_odd(multi)
   last = multi.count - 1
   next_to_last = multi.count - 2
-  # Perform a union on the last two arrays
+  # Perform a union on the last two inner arrays
   # Google: set operators with Ruby arrays
   together = multi[next_to_last] | multi[last]
   # Assign the next-to-the-last inner array the union value (3 items)
