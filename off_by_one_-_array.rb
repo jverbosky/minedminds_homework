@@ -53,27 +53,30 @@ winning_numbers.each do |winner|
     print "Set 2: #{set_2}"
     print "\n"
     count += 1
+
+    # off_by_one = 0
+    # greater_than_one = 0
+    comparison_set = set_1.zip(set_2)
+    puts "Comparison set:"
+    print comparison_set
+    print "\n"
+    comparison_set.each do |inner|
+      if inner[0] != inner[1]
+        if (inner[0].to_i - inner[1].to_i).abs == 1
+          off_by_one += 1
+        elsif (inner[0].to_i - inner[1].to_i).abs > 1
+          greater_than_one += 1
+        end
+      end
+    end
+    # if greater_than_one > 0
+    #   return false
+    # elsif off_by_one > 1
+    #   return false
+    # elsif off_by_one == 1
+    #   winning_numbers_off_by_one_digit.push(winner)
+    # end
   end
-  #   # off_by_one = 0
-  #   # greater_than_one = 0
-  #   comparison_set = set_1.zip(set_2)
-  #   comparison_set.each do |inner|
-  #     if inner[0] != inner[1]
-  #       if (inner[0].to_i - inner[1].to_i).abs == 1
-  #         off_by_one += 1
-  #       elsif (inner[0].to_i - inner[1].to_i).abs > 1
-  #         greater_than_one += 1
-  #       end
-  #     end
-  #   end
-  #   if greater_than_one > 0
-  #     return false
-  #   elsif off_by_one > 1
-  #     return false
-  #   elsif off_by_one == 1
-  #     winning_numbers_off_by_one_digit.push(winner)
-  #   end
-  # end
 end
 
 #puts same_number
