@@ -1,4 +1,4 @@
-# Test for two_numbers_off_by_one.rb
+# Test for off_by_one_-_two_numbers.rb
 
 require "minitest/autorun"
 require_relative "off_by_one_-_two_numbers.rb"
