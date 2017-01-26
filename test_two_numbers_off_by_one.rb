@@ -15,9 +15,9 @@ class TestOffByOne < Minitest::Test
     assert_equal(false, results)
   end
 
-  # def test_3_return_false_if_digits_are_all_the_same
-  #   results = compare_numbers('1234', '1234')
-  #   assert_equal(false, results)
-  # end
+  def test_3_return_false_if_digits_are_all_the_same
+    results = compare_numbers('1234', '1234')
+    assert_equal(false, results)
+  end
 
 end
