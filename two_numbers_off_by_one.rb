@@ -21,7 +21,8 @@
 
 # Sandbox testing
 
-comparison_set = [["1", "1"], ["2", "2"], ["3", "2"], ["4", "5"]]
+#comparison_set = [["1", "1"], ["2", "2"], ["3", "2"], ["4", "5"]]
+comparison_set = [["1", "1"], ["2", "2"], ["4", "2"], ["4", "5"]]
 comparison_count = 0
 greater_than_one = 0
 
@@ -33,7 +34,8 @@ comparison_set.each do |inner|
     elsif (inner[0].to_i - inner[1].to_i).abs > 1
       greater_than_one += 1
     end
-    puts comparison_count
+    puts "Comparison count: #{comparison_count}"
+    puts "Greater than one: #{greater_than_one}"
   else
     puts "the same"
   end
