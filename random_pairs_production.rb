@@ -9,25 +9,26 @@
 # Array containing 21 names of Pittsburgh TechHire web dev training team
 names = [
   "Allen Weber",
-  "Brian Lewis",
+  "Andrew Morgan",
+#  "Brian Lewis",
   "Cummie Washington",
   "Dover Hellfeldt",
   "Edwin Wells",
-  "Frank Mugo",
-  "Frank Coleman",
+#  "Frank Mugo",
+#  "Frank Coleman",
   "George Bruner",
   "Jayvon Harris",
   "John Verbosky",  # comment out to test for even number of array items
   "Khalifa Cochran",
-  "Lee Brown",
+#  "Lee Brown",
   "Lisa Petrovich",
   "Matt Teitz",
   "Max Pokropowicz",
   "Mike Ciletti",
-  "Pat Wehman",
-  "Patrick Roberts",
+#  "Pat Wehman",
+#  "Patrick Roberts",
   "Sherri Dyson",
-  "Takhir Salimov",
+#  "Takhir Salimov",
   "Teela Subba"
 ]
 
