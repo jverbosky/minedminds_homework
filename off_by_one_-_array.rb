@@ -33,7 +33,11 @@ def compare_number_array(ticket, winning_numbers)
       end
     end
   end
-  return winning_numbers_off_by_one_digit
+  if winning_numbers_off_by_one_digit.length > 0
+    return winning_numbers_off_by_one_digit
+  else
+    return false
+  end
 end
 
 # Sandbox testing
@@ -43,5 +47,5 @@ end
 # print "\n"
 # print compare_number_array('1234', ['2234', '3234', '1335', '1336'])  # ['2234']
 # print "\n"
-# print compare_number_array('1234', ['1111', '2222', '3333'])  # []
+# print compare_number_array('1234', ['1111', '2222', '3333'])  # false
 
