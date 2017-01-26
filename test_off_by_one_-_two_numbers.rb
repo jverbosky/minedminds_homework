@@ -1,7 +1,7 @@
 # Test for two_numbers_off_by_one.rb
 
 require "minitest/autorun"
-require_relative "two_numbers_off_by_one.rb"
+require_relative "off_by_one_-_two_numbers.rb"
 
 class TestOffByOne < Minitest::Test
 
