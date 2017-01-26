@@ -17,7 +17,6 @@ def compare_number_array(ticket, winning_numbers)
       print "Set 2: #{set_2}"
       print "\n"
       count += 1
-
       off_by_one = 0
       greater_than_one = 0
       comparison_set = set_1.zip(set_2)
