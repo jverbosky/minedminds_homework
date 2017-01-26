@@ -37,8 +37,8 @@ ticket = '1234'
 
 winning_numbers_off_by_one_digit = []
 same_number = 0
-off_by_one = 0
-greater_than_one = 0
+# off_by_one = 0
+# greater_than_one = 0
 count = 0
 
 winning_numbers.each do |winner|
@@ -54,8 +54,8 @@ winning_numbers.each do |winner|
     print "\n"
     count += 1
 
-    # off_by_one = 0
-    # greater_than_one = 0
+    off_by_one = 0
+    greater_than_one = 0
     comparison_set = set_1.zip(set_2)
     puts "Comparison set:"
     print comparison_set
