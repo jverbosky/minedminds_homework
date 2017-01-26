@@ -6,7 +6,7 @@ require_relative "off_by_one_-_array.rb"
 class TestOffByOneArray < Minitest::Test
 
   def test_1_return_true_if_digits_are_off_by_one
-    results = compare_numbers('1234', ['9999', '5678', '1235', '1134', '1344')
+    results = compare_numbers('1234', ['9999', '5678', '1235', '1134', '1344'])
     assert_equal(['1235', '1134'], results)
   end
 
