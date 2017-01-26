@@ -13,6 +13,7 @@ def compare_numbers(num_1, num_2)
   comparison_set.each do |inner|
     print inner
     print "\n"
+  # Next, need to add logic to compare the numbers in each inner array (i.e. +/-1)
   end
 
 
