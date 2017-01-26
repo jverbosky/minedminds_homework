@@ -69,6 +69,8 @@ winning_numbers.each do |winner|
         end
       end
     end
+    puts "Off by one count: #{off_by_one}"
+    puts "Greater than one count: #{greater_than_one}"
     # if greater_than_one > 0
     #   return false
     # elsif off_by_one > 1
