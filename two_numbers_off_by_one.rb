@@ -17,8 +17,6 @@ def compare_numbers(num_1, num_2)
       end
     end
   end
-  puts off_by_one  # count listing for verification
-  puts greater_than_one  # count listing for verification
   if greater_than_one > 0
     return false
   elsif off_by_one > 0
@@ -26,6 +24,6 @@ def compare_numbers(num_1, num_2)
   end
 end
 
-puts compare_numbers('1234', '1224')  # true
-puts compare_numbers('1234', '1325')  # true
-puts compare_numbers('1234', '3234')  # false
+# puts compare_numbers('1234', '1224')  # true
+# puts compare_numbers('1234', '1325')  # true
+# puts compare_numbers('1234', '3234')  # false
