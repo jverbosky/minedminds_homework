@@ -32,13 +32,12 @@
 
 # Sandbox testing in progress...
 
-winning_numbers = ['9999', '5678', '1235', '1134', '1344']
+winning_numbers = ['1234', '9999', '5678', '1235', '1134', '1344']
 ticket = '1234'
 
 winning_numbers_off_by_one_digit = []
+winning_numbers_no_match = []
 same_number = 0
-# off_by_one = 0
-# greater_than_one = 0
 count = 0
 
 winning_numbers.each do |winner|
@@ -71,18 +70,21 @@ winning_numbers.each do |winner|
     end
     puts "Off by one count: #{off_by_one}"
     puts "Greater than one count: #{greater_than_one}"
-    # if greater_than_one > 0
-    #   return false
-    # elsif off_by_one > 1
-    #   return false
-    # elsif off_by_one == 1
-    #   winning_numbers_off_by_one_digit.push(winner)
-    # end
+    puts "Winning ticket: #{winner}"
+    if greater_than_one > 0
+      winning_numbers_no_match.push(winner)
+    elsif off_by_one > 1
+      winning_numbers_no_match.push(winner)
+    elsif off_by_one == 1
+      winning_numbers_off_by_one_digit.push(winner)
+    end
   end
 end
 
-#puts same_number
-#print winning_numbers_off_by_one_digit
+puts "Same number count: #{same_number}"
+print "Winning numbers no match: #{winning_numbers_no_match}"
+print "\n"
+print "Winning numbers off by one digit: #{winning_numbers_off_by_one_digit}"
 
 # Sandbox testing
 # puts compare_number_array('1234', ['9999', '5678', '1235', '1134', '1344'])  # ['1235', '1134']
