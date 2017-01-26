@@ -53,7 +53,18 @@ def compare_number_array(ticket, winning_numbers)
 end
 
 # Sandbox testing
-puts compare_number_array('1234', ['9999', '5678', '1235', '1134', '1344'])  # ['1235', '1134']
-# puts compare_number_array('1234', ['1234', '1235', '1236', '1244', '1334'])  # ['1235', '1244', '1334']
-# puts compare_number_array('1234', ['2234', '3234', '1335', '1336'])  # ['2234']
-# puts compare_number_array('1234', ['1111', '2222', '3333'])  # []
+# print compare_number_array('test', ['9999', '5678', '1235', '1134', '1344'])  # false
+# print "\n"
+# print compare_number_array('1234', '1235')  # false
+# print "\n"
+print compare_number_array('1234', [])  # false
+print "\n"
+# print compare_number_array('1234', ['9999', '5678', '1235', '1134', '1344'])  # ['1235', '1134']
+# print "\n"
+# print compare_number_array('1234', ['1234', '1235', '1236', '1244', '1334'])  # ['1235', '1244', '1334']
+# print "\n"
+# print compare_number_array('1234', ['2234', '3234', '1335', '1336'])  # ['2234']
+# print "\n"
+# print compare_number_array('1234', ['1111', '2222', '3333'])  # false
+# print "\n"
+# print compare_number_array('123456', ['999999', '567890', '123556', '113456', '134456'])  # ['1235', '1134']
