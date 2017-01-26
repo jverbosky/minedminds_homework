@@ -22,13 +22,19 @@ def compare_numbers(num_1, num_2)
     end
     if greater_than_one > 0
       return false
-    elsif off_by_one > 0
+    elsif off_by_one > 1
+      return false
+    elsif off_by_one == 1
       return true
     end
   end
 end
 
-# puts compare_numbers('1234', '1224')  # true
-# puts compare_numbers('1234', '1325')  # true
+# Sandbox testing
+# puts compare_numbers('1234', '1235')  # true
+# puts compare_numbers('1234', '1244')  # true
+# puts compare_numbers('1234', '1334')  # true
+# puts compare_numbers('1234', '2234')  # true
+# puts compare_numbers('1234', '1325')  # false
 # puts compare_numbers('1234', '3234')  # false
 # puts compare_numbers('1234', '1234')  # false

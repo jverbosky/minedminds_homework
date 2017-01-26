@@ -28,7 +28,7 @@ def compare_number_array(ticket, winning_numbers)
   # end
 end
 
-# puts compare_numbers('1234', '1224')  # true
-# puts compare_numbers('1234', '1325')  # true
-# puts compare_numbers('1234', '3234')  # false
-# puts compare_numbers('1234', '1234')  # false
+# puts compare_number_array('1234', ['9999', '5678', '1235', '1134', '1344'])  # ['1235', '1134']
+# puts compare_number_array('1234', ['1234', '1235', '1236', '1244', '12'])  # true
+# puts compare_number_array('1234', '3234')  # false
+# puts compare_number_array('1234', '1234')  # false
