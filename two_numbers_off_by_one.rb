@@ -8,16 +8,14 @@ number_3 = '1325'
 
 def compare_numbers(num_1, num_2)
   set_1 = num_1.split("")
-  print "\n"
-  puts "Beginning comparison..."
-  print set_1
-  print "\n"
   set_2 = num_2.split("")
-  print set_2
-  print "\n"
-  compare = set_1 & set_2
-  print compare
-  print "\n"
+  comparison_set = set_1.zip(set_2)  # [["1", "1"], ["2", "2"], ["3", "2"], ["4", "3"]]
+  comparison_set.each do |inner|
+    print inner
+    print "\n"
+  end
+
+
 end
 
 compare_numbers(number_1, number_2)
