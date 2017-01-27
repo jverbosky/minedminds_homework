@@ -1,7 +1,7 @@
 # The off_by_one_-_array function with explanatory output
 
 def compare_number_array(ticket, winning_numbers)
-  # regex for numeric strings isn't working - need to research and test more
+  # return false if arguments passed in are the wrong type
   if !/\A\d+\z/.match(ticket) || winning_numbers.class != Array || winning_numbers == []
     return false
   else
