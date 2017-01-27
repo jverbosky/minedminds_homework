@@ -20,8 +20,8 @@ def compare_number_array(ticket, winning_numbers)
             off_by_one += 1  # if so, increment the off_by_one counter
           elsif (inner[0].to_i - inner[1].to_i).abs > 1  # check if the digits are off by more than 1
             greater_than_one += 1  # if so, increment the greater_than_one counter
-          end  # restart the loop and compare the next pair of digits
-        end
+          end
+        end  # restart the loop and compare the next pair of digits
       end
       # if a single digit is off by one and there are no digits off by more than one
       if off_by_one == 1 && greater_than_one == 0
