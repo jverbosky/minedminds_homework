@@ -3,7 +3,7 @@
 # Use case 2: If we pass '1234' and '1325' (more than 1 digit off), the function should return false
 
 def compare_numbers(num_1, num_2)
-  if num_1.to_i == 0 || num_2.to_i == 0  # return false if either argument is not a numerical string
+  if num_1 !=~ /\A\d+\z/ || num_2 !=~ /\A\d+\z/  # return false if either argument is not a numerical string
     return false
   else
     if num_1 == num_2  # return false if the numbers are identical

@@ -4,7 +4,7 @@
 
 def compare_number_array(ticket, winning_numbers)
   # return false if arguments passed in are the wrong type
-  if ticket.to_i == 0 || winning_numbers.class != Array || winning_numbers == []
+  if ticket !=~ /\A\d+\z/ || winning_numbers.class != Array || winning_numbers == []
     return false
   else
     winning_numbers_off_by_one_digit = []  # array for numbers to return
