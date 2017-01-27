@@ -47,6 +47,8 @@ def compare_number_array(ticket, winning_numbers)
         end
       end  # not required - info only
     end
+    puts "SUMMARY RESULTS"
+    puts "---------------"
     puts "Ticket number: #{ticket}"
     puts "Winning numbers: #{winning_numbers}"
     puts "Same number count: #{same_number}"  # not required - info only
