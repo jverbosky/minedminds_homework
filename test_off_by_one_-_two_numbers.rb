@@ -7,7 +7,7 @@ class TestOffByOne < Minitest::Test
 
   def test_1_return_false_if_either_argument_is_not_a_numerical_string
     results = compare_numbers('word', '1224')
-    assert_equal(true, results)
+    assert_equal(false, results)
   end
 
   def test_2_return_true_if_digits_are_off_by_one
