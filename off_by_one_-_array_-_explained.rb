@@ -28,7 +28,6 @@ def compare_number_array(ticket, winning_numbers)
         print "\n"  # not required - info only
         comparison_set.each do |inner|
           if inner[0] != inner[1]
-            puts (inner[0].to_i - inner[1].to_i).abs  # not required - info only
             if (inner[0].to_i - inner[1].to_i).abs == 1
               off_by_one += 1
             elsif (inner[0].to_i - inner[1].to_i).abs > 1
