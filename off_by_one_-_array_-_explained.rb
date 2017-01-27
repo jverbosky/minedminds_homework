@@ -2,7 +2,7 @@
 
 def compare_number_array(ticket, winning_numbers)
   # regex for numeric strings isn't working - need to research and test more
-  if ticket !=~ /\A\d+\z/ || winning_numbers.class != Array || winning_numbers == []
+  if !/\A\d+\z/.match(ticket) || winning_numbers.class != Array || winning_numbers == []
     return false
   else
     winning_numbers_off_by_one_digit = []
@@ -66,8 +66,8 @@ end
 # print "\n"
 # print compare_number_array('1234', [])  # false
 # print "\n"
-# print compare_number_array('1234', ['9999', '5678', '1235', '1134', '1344'])  # ['1235', '1134']
-# print "\n"
+print compare_number_array('1234', ['9999', '5678', '1235', '1134', '1344'])  # ['1235', '1134']
+print "\n"
 # print compare_number_array('1234', ['1234', '1235', '1236', '1244', '1334'])  # ['1235', '1244', '1334']
 # print "\n"
 # print compare_number_array('1234', ['2234', '3234', '1335', '1336'])  # ['2234']
