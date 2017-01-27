@@ -4,6 +4,7 @@
 
 def compare_number_array(ticket, winning_numbers)
   # return false if arguments passed in are the wrong type
+  # regex for numeric strings isn't working - need to research and test more
   if ticket !=~ /\A\d+\z/ || winning_numbers.class != Array || winning_numbers == []
     return false
   else

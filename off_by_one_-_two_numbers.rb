@@ -3,6 +3,7 @@
 # Use case 2: If we pass '1234' and '1325' (more than 1 digit off), the function should return false
 
 def compare_numbers(num_1, num_2)
+  # regex for numeric strings isn't working - need to research and test more
   if num_1 !=~ /\A\d+\z/ || num_2 !=~ /\A\d+\z/  # return false if either argument is not a numerical string
     return false
   else
@@ -36,13 +37,13 @@ def compare_numbers(num_1, num_2)
 end
 
 # Sandbox testing
-# puts compare_numbers('test', '1235')  # false
-# puts compare_numbers('1234', 'word')  # false
-# puts compare_numbers('test', 'word')  # false
-# puts compare_numbers('1234', '1235')  # true
-# puts compare_numbers('1234', '1244')  # true
-# puts compare_numbers('1234', '1334')  # true
-# puts compare_numbers('1234', '2234')  # true
-# puts compare_numbers('1234', '1325')  # false
-# puts compare_numbers('1234', '3234')  # false
-# puts compare_numbers('1234', '1234')  # false
+puts compare_numbers('test', '1235')  # false
+puts compare_numbers('1234', 'word')  # false
+puts compare_numbers('test', 'word')  # false
+puts compare_numbers('1234', '1235')  # true
+puts compare_numbers('1234', '1244')  # true
+puts compare_numbers('1234', '1334')  # true
+puts compare_numbers('1234', '2234')  # true
+puts compare_numbers('1234', '1325')  # false
+puts compare_numbers('1234', '3234')  # false
+puts compare_numbers('1234', '1234')  # false
