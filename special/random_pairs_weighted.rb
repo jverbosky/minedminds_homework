@@ -15,7 +15,7 @@
 #     not weighted > "Edwin Wells"
 #     weighted     > "*Edwin Wells"
 #
-# For a complete list of use cases, please see Use Case Tests section at line 142
+# For a complete list of use cases, please see Use Case Tests section at line 139
 
 names = [  # 21 names, comment out one to test even set of names
   "Allen Weber",
@@ -45,8 +45,8 @@ def random_pairs_weighted(names)
 
   weighted = []  # array for weighted names
   not_weighted = []  # array for non-weighted names
-  odd_man_out = []  # array to hold name if odd number of names
   paired = []  # array for paired names
+  odd_man_out = ""  # placeholder to hold name if odd number of names
   half = names.length / 2  # integer division, so remainder dropped (if 21, will return 10)
   true_up = 0  # variable to help with balancing size of weighted and non-weighted arrays
   counter = 1  # counter variable for string interpolation in final output
@@ -69,7 +69,7 @@ def random_pairs_weighted(names)
     not_weighted += weighted.slice!(0, true_up)
   end
 
-  # Randomize names in balanced arrays
+  # # Randomize names in balanced arrays
   weighted = weighted.shuffle
   not_weighted = not_weighted.shuffle
 
