@@ -12,16 +12,51 @@
 def find_ticket_numbers_off_by_one(ticket_numbers, winning_numbers)
 
   one_ticket = ''  # array for holding each split ticket number for comparison to winning number
-
-  ticket_numbers_off_by_one_digit = []  # array for numbers to return
-
+  ticket_numbers_off_by_one_digit = []  # array for ticket numbers to return
+  tn_counter = 1
+  wn_counter = 1
 
   ticket_numbers.each do |ticket|
     one_ticket = ''
     one_ticket = ticket
-    puts one_ticket
-    puts one_ticket.class
     print "\n"
+    puts "Ticket_numbers loop iteration #{tn_counter} - ticket number: #{ticket}"
+
+    winning_numbers.each do |winner|  # iterate through each winning number
+      puts "Winning number: #{winner}"
+      set_1 = winner.split("")  # convert the current winning number into an array
+      set_2 = one_ticket.split("")  # convert the ticket number into an array
+      off_by_one = 0  # counter for winning number digits that are off by one compared to ticket number digit
+      greater_than_one = 0  # counter for winning number digits off by more than one
+      comparison_set = set_1.zip(set_2)  # use .zip method to pair up winning and ticket number digits in multi-d array
+
+      comparison_set.each do |inner|  # iterate through each inner array (pair of digits) to compare
+        if inner[0] != inner[1]  # check if the digits are identical and if they are not...
+          if (inner[0].to_i - inner[1].to_i).abs == 1  # check if the digits are off by +/- 1
+            off_by_one += 1  # if so, increment the off_by_one counter
+          elsif (inner[0].to_i - inner[1].to_i).abs > 1  # check if the digits are off by more than 1
+            greater_than_one += 1  # if so, increment the greater_than_one counter
+          end
+        end  # restart the loop and compare the next pair of digits
+        print "\n"
+        print "Winning_numbers loop iteration #{wn_counter} - set_1: #{set_1}"
+        print "\n"
+        print "Winning_numbers loop iteration #{wn_counter} - set_2: #{set_2}"
+        print "\n"
+        print "Winning_numbers loop iteration #{wn_counter} - comparison_set: #{comparison_set}"
+        print "\n"
+        print "Winning_numbers loop iteration #{wn_counter} - off_by_one: #{off_by_one}"
+        print "\n"
+        print "Winning_numbers loop iteration #{wn_counter} - greater_than_one: #{greater_than_one}"
+        print "\n"
+      end
+      # if a single digit is off by one and there are no digits off by more than one
+      if off_by_one == 1 && greater_than_one == 0
+        ticket_numbers_off_by_one_digit.push(one_ticket)  # push the winning number to the appropriate array
+      end  # compare the ticket number against the next winning number
+      wn_counter += 1
+    end
+    tn_counter += 1
   end
 
 end
