@@ -44,16 +44,13 @@
 # end
 
 def find_unclaimed_winning_numbers(ticket_numbers, winning_numbers)
-  unclaimed_winning_numbers = []  # array for winning numbers to return
-  tn_counter = 1
-  wn_counter = 1
+  winning_tickets = []  # array for tickets that matching winning numbers
+  ticket_numbers_off_by_one_digit = []  # array for ticket numbers that are off by one for a single digit
+  unclaimed_winning_numbers = []  # array for unclaimed winning numbers (neither winning nor off by one)
 
   ticket_numbers.each do |ticket|  # iterate through each ticket number in the array
-    print "\n"
-    puts "Ticket_numbers loop iteration #{tn_counter} - ticket number: #{ticket}"
 
     winning_numbers.each do |winner|  # iterate through each winning number in the array
-      puts "Winning number: #{winner}"
       set_1 = winner.split("")  # convert the current winning number into an array of digits
       set_2 = ticket.split("")  # convert the ticket number into an array of digits
       off_by_one = 0  # counter for winning number digits that are off by one compared to ticket number digit
@@ -68,28 +65,28 @@ def find_unclaimed_winning_numbers(ticket_numbers, winning_numbers)
             greater_than_one += 1  # if so, increment the greater_than_one counter
           end  # end the conditional counter increment statements
         end  # restart the loop and compare the next pair of digits
-        print "\n"
-        print "Winning_numbers loop iteration #{wn_counter} - set_1: #{set_1}"
-        print "\n"
-        print "Winning_numbers loop iteration #{wn_counter} - set_2: #{set_2}"
-        print "\n"
-        print "Winning_numbers loop iteration #{wn_counter} - comparison_set: #{comparison_set}"
-        print "\n"
-        print "Winning_numbers loop iteration #{wn_counter} - off_by_one: #{off_by_one}"
-        print "\n"
-        print "Winning_numbers loop iteration #{wn_counter} - greater_than_one: #{greater_than_one}"
-        print "\n"
       end  # end the comparison_set.each loop
 
       # if more than a single digit is off by one or if there are digits off by more than one
-      if off_by_one > 1 || greater_than_one > 0
+
+      if ticket == winner
+        winning_tickets.push(ticket)
+      elsif off_by_one == 1 && greater_than_one == 0
+        ticket_numbers_off_by_one_digit.push(ticket)  # push the ticket number to the appropriate array
+      else
         unclaimed_winning_numbers.push(winner)  # push the winning number to the appropriate array
       end  # start the next winning_numbers iteration to compare the ticket number against the next winning number
 
     end  # start the next ticket_numbers iteration to compare the next ticket number against the winning numbers
   end  # end the ticket_numbers.each loop
 
-  return unclaimed_winning_numbers  # return list of ticket numbers off by one for a single digit
+  print winning_tickets
+  print "\n"
+  print ticket_numbers_off_by_one_digit
+  print "\n"
+  print unclaimed_winning_numbers
+
+  #return unclaimed_winning_numbers  # return list of ticket numbers off by one for a single digit
 
 end
 
