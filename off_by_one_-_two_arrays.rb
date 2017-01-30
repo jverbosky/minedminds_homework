@@ -3,16 +3,27 @@
 # 2) Returns an array of all of the winning numbers that are one digit off from the ticket number
 # 3) Returns an array of all of the winning numbers that do not meet the first two conditions
 
-def find_winning_ticket_numbers(ticket_numbers, winning_numbers)
-  winning_numbers_match = []  # array for winning numbers that match ticket numbers
-  winning_numbers_match = ticket_numbers & winning_numbers  # array intersection for finding matching numbers
-  return winning_numbers_match  # return array of winning numbers that match ticket numbers
-end
+# def find_winning_ticket_numbers(ticket_numbers, winning_numbers)
+#   winning_numbers_match = []  # array for winning numbers that match ticket numbers
+#   winning_numbers_match = ticket_numbers & winning_numbers  # array intersection for finding matching numbers
+#   return winning_numbers_match  # return array of winning numbers that match ticket numbers
+# end
 
 def find_ticket_numbers_off_by_one(ticket_numbers, winning_numbers)
 
-end
+  one_ticket = []  # array for holding each split ticket number for comparison to winning number
 
+  ticket_numbers_off_by_one_digit = []  # array for numbers to return
+
+
+  ticket_numbers.each do |ticket|
+    one_ticket = []
+    one_ticket.push ticket
+    print one_ticket
+    print "\n"
+  end
+
+end
 
 # Sandbox testing
 # find_winning_ticket_numbers(['1234', '5678'], ['6678', '1235', '5679', '1134', '1234', '1344'])
