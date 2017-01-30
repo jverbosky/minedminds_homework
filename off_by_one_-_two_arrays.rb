@@ -9,11 +9,14 @@ def find_winning_ticket_numbers(ticket_numbers, winning_numbers)
   return winning_numbers_match  # return array of winning numbers that match ticket numbers
 end
 
+def find_ticket_numbers_off_by_one(ticket_numbers, winning_numbers)
+
+end
+
+
 # Sandbox testing
 # find_winning_ticket_numbers(['1234', '5678'], ['6678', '1235', '5679', '1134', '1234', '1344'])
-
-
-
+find_ticket_numbers_off_by_one(['1225', '1234', '5678', '6679'], ['6778', '2225', '6779', '1144', '1234', '1344'])
 
 # For reference:
 #
