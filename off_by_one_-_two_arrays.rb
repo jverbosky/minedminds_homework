@@ -46,6 +46,8 @@
 def find_unclaimed_winning_numbers(ticket_numbers, winning_numbers)
   winning_tickets = []  # array for tickets that matching winning numbers
   ticket_numbers_off_by_one_digit = []  # array for ticket numbers that are off by one for a single digit
+  winning_numbers_off_by_one_digit = []  # corresponding array for ticket_numbers_off_by_one_digit
+                                         # used to calcualate unclaimed winning numbers
   unclaimed_winning_numbers = []  # array for unclaimed winning numbers (neither winning nor off by one)
 
   ticket_numbers.each do |ticket|  # iterate through each ticket number in the array
@@ -73,9 +75,11 @@ def find_unclaimed_winning_numbers(ticket_numbers, winning_numbers)
         winning_tickets.push(ticket)
       elsif off_by_one == 1 && greater_than_one == 0
         ticket_numbers_off_by_one_digit.push(ticket)  # push the ticket number to the appropriate array
-      else
-        unclaimed_winning_numbers.push(winner)  # push the winning number to the appropriate array
+        winning_numbers_off_by_one_digit.push(winner)
       end  # start the next winning_numbers iteration to compare the ticket number against the next winning number
+
+      # Use the difference method to find the winning numbers not in the other sets
+      unclaimed_winning_numbers = winning_numbers - winning_tickets - winning_numbers_off_by_one_digit
 
     end  # start the next ticket_numbers iteration to compare the next ticket number against the winning numbers
   end  # end the ticket_numbers.each loop
@@ -83,6 +87,8 @@ def find_unclaimed_winning_numbers(ticket_numbers, winning_numbers)
   print winning_tickets
   print "\n"
   print ticket_numbers_off_by_one_digit
+  print "\n"
+  print winning_numbers_off_by_one_digit
   print "\n"
   print unclaimed_winning_numbers
 
