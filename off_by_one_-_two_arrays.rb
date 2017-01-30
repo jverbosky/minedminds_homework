@@ -3,9 +3,15 @@
 # 2) Returns an array of all of the winning numbers that are one digit off from the ticket number
 # 3) Returns an array of all of the winning numbers that do not meet the first two conditions
 
-def compare_ticket_array_to_winning_array(ticket_numbers, winning_numbers)
-
+def find_winning_ticket_numbers(ticket_numbers, winning_numbers)
+  winning_numbers_match = []  # array for winning numbers that match ticket numbers
+  winning_numbers_match = ticket_numbers & winning_numbers  # array intersection for finding matching numbers
+  return winning_numbers_match  # return array of winning numbers that match ticket numbers
 end
+
+# Sandbox testing
+# find_winning_ticket_numbers(['1234', '5678'], ['6678', '1235', '5679', '1134', '1234', '1344'])
+
 
 
 
