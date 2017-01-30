@@ -11,15 +11,16 @@
 
 def find_ticket_numbers_off_by_one(ticket_numbers, winning_numbers)
 
-  one_ticket = []  # array for holding each split ticket number for comparison to winning number
+  one_ticket = ''  # array for holding each split ticket number for comparison to winning number
 
   ticket_numbers_off_by_one_digit = []  # array for numbers to return
 
 
   ticket_numbers.each do |ticket|
-    one_ticket = []
-    one_ticket.push ticket
-    print one_ticket
+    one_ticket = ''
+    one_ticket = ticket
+    puts one_ticket
+    puts one_ticket.class
     print "\n"
   end
 
