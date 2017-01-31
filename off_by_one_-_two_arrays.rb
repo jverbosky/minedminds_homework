@@ -92,7 +92,7 @@ def find_unclaimed_winning_numbers(ticket_numbers, winning_numbers)
     end  # start the next ticket_numbers iteration to compare the next ticket number against the winning numbers
   end  # end the ticket_numbers.each loop
 
-  return unclaimed_winning_numbers  # return list of unclaimed winning numbers
+  return unclaimed_winning_numbers  # return array of unclaimed winning numbers
                                     # note that we could also return the winning and off-by-one tickets here
 
 end
