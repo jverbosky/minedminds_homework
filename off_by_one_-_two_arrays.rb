@@ -79,11 +79,9 @@ def find_unclaimed_winning_numbers(ticket_numbers, winning_numbers)
         end  # restart the loop and compare the next pair of digits
       end  # end the comparison_set.each loop
 
-      # if more than a single digit is off by one or if there are digits off by more than one
-
-      if ticket == winner
+      if ticket == winner  # if the ticket number matches the winning number
         winning_tickets.push(ticket)  # push the winning number to the appropriate array
-      elsif off_by_one == 1 && greater_than_one == 0
+      elsif off_by_one == 1 && greater_than_one == 0  # or if the ticket number is off by one
         ticket_numbers_off_by_one_digit.push(ticket)  # push the ticket numbers off by one to the appropriate array
         winning_numbers_off_by_one_digit.push(winner)  # and push the corresponding winning numbers to their own array
       end  # start the next winning_numbers iteration to compare the ticket number against the next winning number
